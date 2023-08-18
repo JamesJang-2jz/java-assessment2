@@ -60,6 +60,14 @@ public class IntegerArrayUtils {
      * @return identical array with odd-values decremented by 1
      */
     public static Integer[] decrementOdd(Integer[] input) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        for (Integer i : input) {
+            if (i % 2 != 0){
+                result.add(i - 1);
+            } else {
+                result.add(i);
+            }
+        }
+        return result.toArray(new Integer[0]);
     }
 }
