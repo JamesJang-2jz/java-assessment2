@@ -1,8 +1,10 @@
 package rocks.zipcode.assessment2.arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.IntStream;
 
 /**
  * @author leon on 28/11/2018.
@@ -36,7 +38,10 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-        return null;
+        return Arrays.stream(integerArray)
+                .skip(indexToFetch)
+                .findFirst()
+                .orElse(null);
     }
 
     /**
