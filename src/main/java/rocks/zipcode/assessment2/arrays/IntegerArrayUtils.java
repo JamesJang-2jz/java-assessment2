@@ -49,7 +49,9 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1 and odd-values decremented by 1
      */
     public static Integer[] incrementEvenDecrementOdd(Integer[] integerArray) {
-        return null;
+        return Arrays.stream(integerArray)
+                .map(i -> i % 2 == 0 ? i + 1 : i - 1)
+                .toArray(Integer[]::new);
     }
 
     /**
