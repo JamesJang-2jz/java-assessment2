@@ -52,7 +52,15 @@ public class IntegerArrayUtils {
      * @return identical array with even-values incremented by 1
      */
     public static Integer[] incrementEven(Integer[] integerArray) {
-        return null;
+        List<Integer> result = new ArrayList<>();
+        for (Integer i :integerArray) {
+            if (i % 2 == 0){
+                result.add(i + 1);
+            } else {
+                result.add(i);
+            }
+        }
+        return result.toArray(new Integer[0]);
     }
 
     /**
