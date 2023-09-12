@@ -1,5 +1,8 @@
 package rocks.zipcode.assessment2.collections;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Use a map to solve
  */
@@ -8,8 +11,10 @@ public class MonthConversion {
      * @param monthNumber - ordinal of month in the year; i.e. January = 1, February = 2
      * @param monthName - name of month
      */
-    public void add(Integer monthNumber, String monthName) {
+    Map<Integer, String> monthverter = new HashMap<>();
 
+    public void add(Integer monthNumber, String monthName) {
+        monthverter.put(monthNumber, monthName);
     }
 
     /**
@@ -17,15 +22,22 @@ public class MonthConversion {
      * @return the name of the respective month
      */
     public String getName(Integer monthNumber) {
-        throw new NullPointerException();
+        return monthverter.getOrDefault(monthNumber, null);
     }
 
     /**
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
-        return (Integer)null;
+    public Integer getNumber(String monthName) {
+        Integer result = null;
+        for (Map.Entry<Integer, String> pair : monthverter.entrySet()) {
+            if (pair.getValue().equals(monthName)){
+                result = pair.getKey();
+                break;
+            }
+        }
+        return result;
     }
 
     /**
@@ -48,7 +60,7 @@ public class MonthConversion {
      * @return number of entries in this mapping
      */
     public Integer size() {
-        return -1;
+        return monthverter.size();
     }
 
     /**
@@ -56,6 +68,6 @@ public class MonthConversion {
      * @param monthName - name of month
      */
     public void update(Integer monthNumber, String monthName) {
-
+        monthverter.put(monthNumber, monthName);
     }
 }
