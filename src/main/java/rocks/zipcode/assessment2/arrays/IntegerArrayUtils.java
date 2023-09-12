@@ -29,7 +29,15 @@ public class IntegerArrayUtils {
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0; i < integerArray.length; i++) {
+            if (i != indexToInsertAt){
+                list.add(integerArray[i]);
+            } else {
+                list.add(valueToBeInserted);
+            }
+        }
+        return list.toArray(new Integer[0]);
     }
 
     /**
