@@ -39,7 +39,13 @@ public class BasicStringUtils {
      * @return `string` with `charactersToRemove` removed
      */
     public static String removeCharacters(String string, String charactersToRemove) {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < string.length(); i++) {
+            if (charactersToRemove.indexOf(string.charAt(i)) == -1) {
+                sb.append(string.charAt(i));
+            }
+        }
+        return sb.toString();
     }
 
     /**
