@@ -27,7 +27,10 @@ public class BasicStringUtils {
      * @return concatenation of the reverse of `string1` and reverse of `string2`
      */
     public static String reverseThenConcatenate(String string1, String string2) {
-        return null;
+        StringBuilder sb = new StringBuilder();
+        sb.append(reverse(string1));
+        sb.append(reverse(string2));
+        return sb.toString();
     }
 
     /**
