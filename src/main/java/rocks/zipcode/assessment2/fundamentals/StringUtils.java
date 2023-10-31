@@ -1,5 +1,7 @@
 package rocks.zipcode.assessment2.fundamentals;
 
+//import com.sun.org.apache.xpath.internal.operations.Bool;
+
 /**
  * @author leon on 28/11/2018.
  */
@@ -40,7 +42,7 @@ public class StringUtils {
      * @return - true if string only contains alpha characters
      */
     public static Boolean isAlphaString(String string) {
-        return null;
+        return string.matches("[a-zA-Z ]+");
     }
 
     /**
