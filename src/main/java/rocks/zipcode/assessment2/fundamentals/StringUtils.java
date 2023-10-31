@@ -28,7 +28,11 @@ public class StringUtils {
      * @return the string repeated and concatenated `n` times
      */
     public static String repeatString(String stringToBeRepeated, int numberOfTimeToRepeat) {
-        return null;
+        String result = "";
+        for (int i = 0; i < numberOfTimeToRepeat; i++) {
+            result += stringToBeRepeated;
+        }
+        return result;
     }
 
     /**
